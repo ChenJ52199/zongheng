@@ -11,7 +11,8 @@ BOT_NAME = 'zongheng'
 
 SPIDER_MODULES = ['zongheng.spiders']
 NEWSPIDER_MODULE = 'zongheng.spiders'
-LOG_LEVEL = 'INFO'
+LOG_LEVEL = 'WARNING'
+LOG_FILE = './log.log'
 
 DOWNLOAD_TIMEOUT = 60  # 响应超时时间 s
 
@@ -63,8 +64,8 @@ CONCURRENT_REQUESTS_PER_IP = 8
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    'zongheng.middlewares.RandomProxyMiddleware': 301,
-    # 'zongheng.middlewares.RandomProxyMiddleware': None,
+    # 'zongheng.middlewares.RandomProxyMiddleware': 301,
+    'zongheng.middlewares.RandomProxyMiddleware': None,
     'zongheng.middlewares.RandomUserAgentMiddleware': 544,
 }
 
